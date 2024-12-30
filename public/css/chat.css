@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fc;
+    padding: 20px;
+}
+
+.chat-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chat-box {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+}
+
+.chat-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.send-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.send-btn:hover {
+    background-color: #45a049;
+}
+
+.loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+.conversation {
+    position: relative;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-bottom: 1px solid #c1c1c1;
+}
+
+.convo-time {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    font-size: 12px;
+}
+
+.convo-details p {
+    padding-right: 150px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
