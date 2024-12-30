@@ -26,7 +26,7 @@ class ChatGPTController extends Controller
         return response()->json($conversations);
     }
     // Handle the user request and get response from ChatGPT.
-    public function sendRequest(SendMessageRequest $reques)
+    public function sendRequest(SendMessageRequest $request)
     {
         $message = $request->post('message');
         $response = $this->chatGPTService->getChatGptResponse($message);
