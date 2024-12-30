@@ -110,9 +110,16 @@ $(document).ready(function () {
                 sendBtn.prop('disabled', false);
                 chatBox.scrollTop(chatBox[0].scrollHeight); // Scroll to bottom
             },
-            error: () => {
+            error: (xhr) => {
                 loader.hide();
-                showToast('An error occurred. Please try again later.');
+                const response = xhr.responseJSON;
+        
+                // Handle validation errors
+                if (response.errors && response.errors.message) {
+                    showToast(response.errors.message[0]); // Show the first error message
+                } else {
+                    showToast('An error occurred. Please try again later.');
+                }
                 sendBtn.prop('disabled', false);
             },
             timeout: 10000, // 10 seconds timeout

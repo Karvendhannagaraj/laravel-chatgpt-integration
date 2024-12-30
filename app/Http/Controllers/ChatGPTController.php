@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\ChatGPTService;
 use App\Models\Conversation;
+use App\Http\Requests\SendMessageRequest;
 class ChatGPTController extends Controller
 {
     protected $chatGPTService;
@@ -25,7 +26,7 @@ class ChatGPTController extends Controller
         return response()->json($conversations);
     }
     // Handle the user request and get response from ChatGPT.
-    public function sendRequest(Request $request)
+    public function sendRequest(SendMessageRequest $reques)
     {
         $message = $request->post('message');
         $response = $this->chatGPTService->getChatGptResponse($message);
